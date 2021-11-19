@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mikail Khan</title>
+  {{header}}
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="flex-parent">
+      <div class="section">
+        <div class="header opaque">
+          <h1>Projects</h1>
+          <nav class="body-center smallmenu">
+            <div>
+            <a class="linkButton" href="{{index_route}}">Home</a>
+            </div>
+            <div>
+            <a class="linkButton" href="{{resume_route}}">Resume</a>
+            </div>
+          </nav>
+        </div>
+        <div class="body-center">
+          <div class="project-grid opaque">
+            %startloop% {{projects}}
+            <div class="project">
+              <a href="{{projectURL}}">
+              <h1 class="align-center"><span class="align-center">{{projectName}}</span></h1><img src="{{projectThumbnail}}">
+              <div class="project-desc">
+                  {{projectDesc}}
+              </div></a>
+            </div>
+            %endloop%
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  {{footer}}
+</body>
+</html>

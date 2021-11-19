@@ -1,31 +1,70 @@
+<!DOCTYPE html>
 <html>
-    <head>
-	<title> Resume </title>
-    </head>
-
-    <h1> {{name}} </h1>
-
-    <body style="max-width: 100ch;">
-	<div>
-	    <h3> Skills </h3>
-	    %startloop% {{skills}}
-	    {{name}},
-	    %endloop%
-	</div>
-
-	<hr>
-
-	<div>
-	    <h3> Experience </h3>
-	    %startloop% {{experience}}
-	    <h4> {{name}} <span style="font-size: 0.7em; font-weight: normal;"> &nbsp; {{timeframe}} </span> </h4>
-	    <a href=" {{url}} "> {{url}} </a>
-	    <ul>
-		%startloop% {{description}}
-		<li> {{item}} </li>
-		%endloop%
-	    </ul>
-	    %endloop%
-	</div>
-    </body>
+<head>
+  <title>Mikail Khan</title>
+  {{header}}
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="resumeContainer flex-center">
+      <div class="resumeHeader opaque">
+        <h1>Mikail Khan</h1>
+        <h3>mikail [at] mikail-khan [dot] com</h3><a href="https://github.com/mkhan45"><span class="icon-btn">{{ghicon}}</span></a><a href="https://www.linkedin.com/in/mikail-khan-6121921a1/"><span class="icon-btn">{{liicon}}</span></a>
+        <nav class="body-center smallmenu">
+          <div>
+          <a class="linkButton" href="{{index_route}}">Home</a>
+          </div>
+          <div>
+          <a class="linkButton" href="{{portfolio_route}}">Portfolio</a>
+          </div>
+        </nav>
+      </div>
+      <div class="resume opaque">
+        <div class="resumeSection skills">
+          <h2>Skills</h2>
+          <hr>
+          %startloop% {{skills}}
+          {{name}}, 
+          %endloop%
+        </div>
+        <div class="resumeSection experienceList">
+          <h2>Experience</h2>
+          <hr>
+          %startloop% {{experience}}
+          <div class="experienceEntry">
+            <ul>
+              <li>
+                  <h3><span class="lift"><a href="{{url}}">{{name}}<span class="timeframe">({{timeframe}})</span>
+                  <span class="link-icon">{{linkicon}}</span></a></span></h3>
+              </li>
+              %startloop% {{description}}
+                <li>{{item}}</li>
+              %endloop%
+            </ul>
+          </div>
+          %endloop%
+        </div>
+        <div class="resumeSection educationList">
+          <h2>Education</h2>
+          <hr>
+          %startloop% {{education}}
+          <div class="educationEntry">
+            <ul>
+              <li>
+              <h3><span class="lift"><a href="{{url}}">{{name}}<span class="timeframe">({{timeframe}})</span><span class=
+              "link-icon">{{linkicon}}</span></a></span></h3>
+              </li>
+              %startloop% {{description}}
+              <li>{{item}}</li>
+              %endloop%
+            </ul>
+          </div>
+          %endloop%
+        </div>
+      </div>
+    </div>
+  </main>
+  {{footer}}
+</body>
 </html>

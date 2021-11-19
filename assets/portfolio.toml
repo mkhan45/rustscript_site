@@ -1,0 +1,191 @@
+[[projects]]
+projectName = "CalcuLaTeX"
+projectURL = "https://calcula.tech"
+projectThumbnail = "https://mikail-khan.com/img/calculatex.png"
+projectDesc = "A pretty printing calculator with support for units and realtime output"
+projectDetailDesc = """
+<p>
+CalcuLaTeX is a pretty printing calculator language. Its goal is to make calculations easier and more presentable with real time LaTeX rendered output, support for SI units, variables, and mathematical functions.
+</p>
+<ul>
+<li>Composed of an interpreter to run the calculations and a compiler to compile expressions and their answers into LaTeX</li>
+<li>Each expression is parsed twice, once for the interpreter, and once for the compiler, in order to make LaTeX output more closely mirror user input</li>
+<li>Uses a comprehensive test suite and automated CI</li>
+<li>CalcuLaTeX is hosted as a web app on https://calcula.tech, where it has had thousands of visitors to date.</li>
+<li>300+ stars, multiple contributors on GitHub</li>
+<li>Written in Rust, website built with Elixir, Phoenix Liveview, and JavaScript</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "Rocket Simulator"
+projectURL = "https://github.com/mkhan45/rocket_sim"
+projectThumbnail = "https://mikail-khan.com/img/rocket_sim.png"
+projectDesc = "An in progress rocket simulator inspired by Kerbal Space Program"
+projectDetailDesc = """
+<p>Simulates a rocket accurately taking into account fuel, gravity, air resistance, universal gravitation,
+and more. Get into orbit around Earth, the Moon, or eventually any other planet in the Solar System.</p>
+<ul>
+    <li>
+	Controls:
+        <ul>
+            <li> Q/E for min/max throttle </li>
+            <li> A and D to tilt the rocket </li>
+            <li> Z and C to decrease/increase throttle </li>
+            <li> M to bring up the map, including a predicted trajectory. 
+                 Minimize throttle to see a longer prediction. </li>
+        </ul>
+    </li>
+</ul>
+"""
+
+
+[[projects]]
+projectName = "RustScript2"
+projectURL = "https://github.com/mkhan45/RustScript2"
+projectThumbnail = "https://mikail-khan.com/img/rustscript2.png"
+projectDesc = "RustScript2 is a functional scripting language with as much relation to Rust as JavaScript has to Java."
+projectDetailDesc = """
+<p>RustScript2 is a functional scripting language written in OCaml with as much relation to Rust as JavaScript has to Java.</p>
+<ul>
+    <li>Expression based, fully functional language</li>
+    <li>Support for functional features such as first class/higher order functions, list comprehensions, and pattern matching</li>
+    <li>Treewalk interpreter that <a href='http://www.iro.umontreal.ca/~feeley/papers/FeeleyLapalmeCL87.pdf'>compiles to closures</a> for improved performance</li>
+    <li>Tail-Call-Optimization through trampolines</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "SIMple Mechanics"
+projectURL = "https://github.com/mkhan45/SIMple-Mechanics"
+projectThumbnail = "https://mikail-khan.com/img/mech.png"
+projectDesc = "A 2D rigidbody simulator made to help learn and teach physics online."
+projectDetailDesc = """
+<p>SIMple Mechanics is one part of my SIMple Physics project. It is a simulator whose goal is to make it easier to learn and teach 2D mechanics without expensive lab equipment or in person demonstrations.</p>
+<ul>
+    <li>Uses an immediate mode GUI framework</li>
+    <li>In addition to real time graphics, outputs simulation data as a CSV file for further analysis</li>
+    <li>Includes highly integrated Lua scripting for custom scenarios and interactions</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "SIMple Electronics"
+projectURL = "https://mkhan45.github.io/SIMple-Electronics"
+projectThumbnail = "https://mikail-khan.com/img/electronics.png"
+projectDesc = "A digital logic circuit simulator made to help understand and explain circuits. Compiled to WASM."
+projectDetailDesc = """
+<p>SIMple Electronics is a digital logic circuit simulator made to help explain circuits.</p>
+<ul>
+    <li>Uses an ECS based graph system to represent circuits</li>
+    <li>Compiled to WASM</li>
+    <li>Incomplete/on hold, but still useful</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "SIMple Gravity"
+projectURL = "https://github.com/mkhan45/SIMple-Gravity"
+projectThumbnail = "https://mikail-khan.com/img/gravity.png"
+projectDesc = "A Universal Gravitation simulator made to help learn and teach physics online."
+projectDetailDesc = """
+<p>SIMple Gravity is one part of my SIMple Physics project. It is a simulator whose goal is to make learning and teaching universal gravitation more intuitive.
+<ul>
+    <li>Uses an immediate mode GUI framework</li>
+    <li>In addition to real time graphics, outputs simulation data as a CSV file for further analysis</li>
+    <li>Includes highly integrated Lua scripting for custom scenarios and interactions</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "TinyVM"
+projectURL = "https://github.com/mkhan45/tinyvm"
+projectThumbnail = "https://mikail-khan.com/img/tinyvm.png"
+projectDesc = "A tiny stack based bytecode VM that interprets a Turing complete instruction set."
+projectDetailDesc = """
+<p>TinyVM is a small bytecode VM written to better understand interpreters. In just 250 lines of code, it interprets a Turing complete, hand-writeable instruction set in an easily understandable way.</p>
+<ul>
+    <li>Heavily commented; meant to explain stack VMs to developers without related experience</li>
+    <li>Includes a simple compiler to interpret instruction files</li>
+    <li>50+ stars on github</li>
+    <li><a href='https://mkhan45.github.io/2021/04/06/Writing-a-Tiny-Stack-VM-in-Rust.html'>
+    Blog post / in depth explanation
+    </a></li>
+</ul>
+"""
+
+[[projects]]
+projectName = "slang"
+projectURL = "https://github.com/mkhan45/slang-v2"
+projectThumbnail = "https://mikail-khan.com/img/slang.png"
+projectDesc = "A simple scripting language interpreter"
+projectDetailDesc = """
+<p>Slang is a simple treewalk scripting language interpreter made from loosely following Crafting Interpreters in Rust.</p>
+<ul>
+    <li>Fully featured scripting language, including support for common variable types, block scoping, loops, conditionals, arrays, and first-class functions</li>
+    <li>Includes a basic REPL</li>
+    <li>Uses a hand-written scanner and Pratt Parser</li>
+    <li>Partial support for compiling to TinyVM bytecode</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "RustScript"
+projectURL = "https://github.com/mkhan45/RustScript"
+projectThumbnail = "https://mikail-khan.com/img/rustscript.png"
+projectDesc = "A functional scripting language with as much relation to Rust as JavaScript has to Java"
+projectDetailDesc = """
+<p>RustScript is a functional scripting language written in Java with as much relation to Rust as JavaScript has to Java.</p>
+<ul>
+    <li>Expression based, fully functional language</li>
+    <li>Support for functional features such as first class/higher order functions, list comprehensions, and basic pattern matching</li>
+    <li>Transferred project to a new, active maintainer at <a href='https://github.com/WilliamRagstad/RustScript'>WilliamRagstad/RustScript</a></li>
+</ul>
+"""
+
+[[projects]]
+projectName = "mikail-khan.com"
+projectURL = "https://github.com/mkhan45/mikail-khan.com"
+projectThumbnail = "https://mikail-khan.com/img/site.png"
+projectDesc = "My personal website. Built with Haskell's Servant and Blaze-HTML"
+projectDetailDesc = """
+My personal website.
+<ul>
+    <li>Written in Haskell using the Servant Web framework</li>
+    <li>Uses the Blaze-HTML DSL for markup</li>
+    <li>Includes a template caching system to decrease server load</li>
+    <li>Reads resume/portfolio details from TOML files to generate pages</li>
+"""
+
+[[projects]]
+projectName = "Pumice"
+projectURL = "https://github.com/mkhan45/pumice"
+projectThumbnail = "https://mikail-khan.com/img/pumice.png"
+projectDesc = "A vulkano-made light and brittle game engine that rocks."
+projectDetailDesc = """
+<p>Pumice is a proof of concept game engine written using Khronos Group’s next-generation Vulkan graphics library.</p>
+<ul>
+    <li>Handles 2D graphics, input, and the game loop</li>
+    <li>Includes custom fragment and vertex shaders</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "Tetrs"
+projectURL = "https://github.com/mkhan45/tetrs"
+projectThumbnail = "https://mikail-khan.com/img/tetrs.png"
+projectDesc = "Tetris using Rust and ggez."
+projectDetailDesc = "A simple Tetris clone written in Rust using the <a href='https://ggez.rs'>GGEZ</a> game engine"
+
+[[projects]]
+projectName = "ssshmup"
+projectURL = "https://github.com/mkhan45/ssshmup"
+projectThumbnail = "https://mikail-khan.com/img/ssshmup.png"
+projectDesc = "A super small shoot 'em up"
+projectDetailDesc = """
+<p>A spaceship game</p>
+<ul>
+    <li>Uses the specs ECS library</li>
+    <li>Handwritten animation and particle systems</li>
+</ul>
+"""
