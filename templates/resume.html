@@ -26,7 +26,7 @@
           <hr>
           %startloop% {{skills}}
           {{name}}, 
-          %endloop%
+          %end%
         </div>
         <div class="resumeSection experienceList">
           <h2>Experience</h2>
@@ -35,15 +35,28 @@
           <div class="experienceEntry">
             <ul>
               <li>
-                  <h3><span class="lift"><a href="{{url}}">{{name}}<span class="timeframe">({{timeframe}})</span>
+                  %if% {{url}}
+                  <h3><span class="lift"><a href="{{url}}">{{name}}
+                      %if% {{timeframe}}
+                      <span class="timeframe">({{timeframe}})</span>
+                      %end%
                   <span class="link-icon">{{linkicon}}</span></a></span></h3>
+                  %end%
+
+                  %ifnot% {{url}}
+                  <h3><span class="lift">{{name}}
+                      %if% {{timeframe}}
+                      <span class="timeframe">({{timeframe}})</span>
+                      %end%
+                  </span></h3>
+                  %end%
               </li>
               %startloop% {{description}}
                 <li>{{item}}</li>
-              %endloop%
+              %end%
             </ul>
           </div>
-          %endloop%
+          %end%
         </div>
         <div class="resumeSection educationList">
           <h2>Education</h2>
@@ -52,15 +65,30 @@
           <div class="educationEntry">
             <ul>
               <li>
-              <h3><span class="lift"><a href="{{url}}">{{name}}<span class="timeframe">({{timeframe}})</span><span class=
-              "link-icon">{{linkicon}}</span></a></span></h3>
+              %if% {{url}}
+              <h3><span class="lift"><a href="{{url}}">{{name}}
+                  %if% {{timeframe}}
+                  <span class="timeframe">({{timeframe}})</span>
+                  %end%
+                  <span class="link-icon">{{linkicon}}</span></a></span>
+              </h3>
+              %end%
+
+              %ifnot% {{url}}
+              <h3><span class="lift">{{name}}
+                  %if% {{timeframe}}
+                  <span class="timeframe">({{timeframe}})</span>
+                  %end%
+                  </span>
+              </h3>
+              %end%
               </li>
               %startloop% {{description}}
               <li>{{item}}</li>
-              %endloop%
+              %end%
             </ul>
           </div>
-          %endloop%
+          %end%
         </div>
       </div>
     </div>

@@ -116,8 +116,6 @@ description = []
 
 [[education]]
 name = "Relevant Coursework"
-timeframe = ""
-url = "#"
 description = [
     """
     Past: AP Computer Science A + Datastructures, Web + Mobile App Development, 
