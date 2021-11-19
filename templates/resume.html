@@ -1,0 +1,31 @@
+<html>
+    <head>
+	<title> Resume </title>
+    </head>
+
+    <h1> {{name}} </h1>
+
+    <body style="max-width: 100ch;">
+	<div>
+	    <h3> Skills </h3>
+	    %startloop% {{skills}}
+	    {{name}},
+	    %endloop%
+	</div>
+
+	<hr>
+
+	<div>
+	    <h3> Experience </h3>
+	    %startloop% {{experience}}
+	    <h4> {{name}} <span style="font-size: 0.7em; font-weight: normal;"> &nbsp; {{timeframe}} </span> </h4>
+	    <a href=" {{url}} "> {{url}} </a>
+	    <ul>
+		%startloop% {{description}}
+		<li> {{item}} </li>
+		%endloop%
+	    </ul>
+	    %endloop%
+	</div>
+    </body>
+</html>

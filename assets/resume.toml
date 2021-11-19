@@ -1,0 +1,263 @@
+name = "Mikail Khan"
+email = "mikail [at] mikail-khan [dot] com"
+
+[[experience]]
+name = "Intern, Frontier Technology, Inc."
+url = "https://www.fti-net.com/"
+timeframe = "2021 Summer"
+categories = ["C++, Python"]
+description = [
+    "Overhauled internal web application UX to improve employee efficiency",
+    "Completed core application features using Python/Django backend, JavaScript/jQuery frontend",
+    "Deployed essential company services to the cloud using Docker, Kubernetes, and OpenFaaS",
+    "Presented accomplishments, technical decisions and tradeoffs, to company leadership",
+]
+
+[[experience]]
+name = "Intern, Mun Lang"
+url = "https://mun-lang.org/"
+timeframe = "2021 Summer"
+categories = ["PL Dev", "Rust"]
+description = [
+    """
+    Mun Lang is an embeddable programming language empowering 
+    creation through iteration. Inspired by Lua and Rust, it is
+    early in development and open-source.
+    """,
+
+    "Implemented compiler features using the Rust programming language",
+
+    "Discussed language design specifics with the core team",
+]
+
+
+[[experience]]
+name = "Co-founder, Krypton Tutors"
+url = "https://kryptontutors.com"
+timeframe = "2020-Present"
+categories = ["Web Development", "Teaching", "Management"]
+description = [
+    """
+    Established an online platform which connects tutors with students, especially with 
+    regard to niche subjects such as competition math, Artificial intelligence, or Web Development
+    """,
+
+    "Managed technical aspects of marketing, and development of our website",
+
+    "Interviewed students, parents, and tutors to identify needs and design curriculum",
+
+    "Managed eight tutors, earned tens of thousands of dollars in revenue",
+]
+
+# [[experience]]
+# name = "Founder, SIMple Physics"
+# url = "https://mkhan45.github.io/SIMple-Physics/tabs/about/"
+# timeframe = "2019-Present"
+# categories = ["Simulation Development", "Rust", "Physics"]
+# description = [
+#     """
+#     Architected and developed a set of physics simulators designed
+#     to help teach physics. Each simulator helps teachers teach concepts
+#     intuitively and conduct educational labs without expensive equipment.
+#     """,
+
+#     "Written in Rust using extensive Linear Algebra and Differential Equations.",
+# ]
+
+[[experience]]
+name = "Software Engineer, Indy Autonomous Challenge Research"
+timeframe = "2020-Present"
+url = "https://engineering.purdue.edu/AMP/"
+categories = ["Simulation Development", "Machine Learning", "Unity", "C#"]
+description = [
+    "Collaborated with a team of students from the undergraduate to PhD level to design a self-driving car that will avoid obstacles and overtake other cars at high speeds",
+
+    "Architected and built a simulator, vehicle PID controller, and convolutional/recurrent neural networks using Python and PyTorch"
+]
+
+[[experience]]
+name = "Projects"
+url = "https://mikail-khan.com/portfolio"
+timeframe = "2018-Present"
+categories = []
+description = ["Read about my most notable projects on my portfolio page"]
+
+# [[experience]]
+# name = "President, Assistive Technology Club"
+# timeframe = "2016-2020"
+# categories = ["Arduino", "C++", "Leadership"]
+# description = [
+#     "Collaborated to create products to help special ed children. Skills used include HTML/CSS/JavaScript, Arduino, and C++.",
+#     "Organized meetings, recruited members, and worked with Fairfax County Public School officials and special ed teachers."
+# ]
+
+[[education]]
+name = "Purdue University"
+timeframe = "2020-Present"
+url = "https://www.purdue.edu/"
+description = [
+    "Math + Computer Science Major",
+    "3.9 GPA"
+]
+
+[[education]]
+name = "MIT Beaver Works Cog*Works"
+timeframe = "2019"
+url = "https://beaverworks.ll.mit.edu/CMS/bw/BWSI_Course_Autonomous_Cognitive_Assistance"
+description = [
+    "Advanced machine learning including audio recognition, image classification, and natural language processing, primarily in Python.",
+]
+
+[[education]]
+name = "Thomas Jefferson High School for Science and Technology"
+timeframe = "2016-2020"
+url = "https://tjhsst.fcps.edu/"
+description = []
+
+[[education]]
+name = "Relevant Coursework"
+description = [
+    """
+    Past: AP Computer Science A + Datastructures, Web + Mobile App Development, 
+    Artificial Intelligence, Multivariable Calculus, Analog + Digital Electronics
+    """,
+
+    "Fall: Statistics for Undergraduates, Physics 172 Mechanics",
+
+    "Spring: Programming I, Chemistry 115"
+]
+
+[[skills]]
+name = "Java"
+categories = ["Programming Language", "Object Oriented"]
+skill_level = 5
+
+[[skills]]
+name = "Python"
+categories = ["Programming Language", "Object Oriented"]
+skill_level = 5
+
+[[skills]]
+name = "JavaScript"
+categories = ["Programming Language", "Web Development", "Object Oriented"]
+skill_level = 3
+
+[[skills]]
+name = "HTML"
+categories = ["Web Development"]
+skill_level = 5
+
+[[skills]]
+name = "CSS"
+categories = ["Web Development"]
+skill_level = 5
+
+[[skills]]
+name = "Linux"
+categories = []
+skill_level = 5
+
+[[skills]]
+name = "Flask"
+categories = ["Python", "Web Development"]
+skill_level = 3
+
+[[skills]]
+name = "Golang"
+categories = ["Programming Language", "Web Development"]
+skill_level = 3
+
+[[skills]]
+name = "Rust"
+categories = ["Programming Language"]
+skill_level = 5
+
+[[skills]]
+name = "Elixir"
+categories = ["Programming Language"]
+skill_level = 3
+
+[[skills]]
+name = "Artificial Intelligence"
+categories = []
+skill_level = 3
+
+[[skills]]
+name = "Test Driven Development"
+categories = []
+skill_level = 3
+
+[[skills]]
+name = "REST APIs"
+categories = ["Web Development"]
+skill_level = 3
+
+[[skills]]
+name = "TypeScript"
+categories = ["Web Development", "Programming Language", "Object Oriented"]
+skill_level = 1
+
+[[skills]]
+name = "ReactJS"
+categories = ["Web Development"]
+skill_level = 1
+
+[[skills]]
+name = "ExpressJS"
+categories = ["Web Development"]
+skill_level = 1
+
+[[skills]]
+name = "C"
+categories = ["Programming Language"]
+skill_level = 3
+
+[[skills]]
+name = "C++"
+categories = ["Object Oriented", "Programming Language"]
+skill_level = 1
+
+[[skills]]
+name = "C#"
+categories = ["Object Oriented", "Programming Language"]
+skill_level = 1
+
+[[skills]]
+name = "Haskell"
+categories = ["Programming Language"]
+skill_level = 1
+
+[[skills]]
+name = "PyTorch"
+categories = ["Python", "Machine Learning"]
+skill_level = 1
+
+[[skills]]
+name = "AWS"
+categories = ["Web Development"]
+skill_level = 1
+
+[[skills]]
+name = "SQL"
+categories = ["Web Development"]
+skill_level = 1
+
+[[skills]]
+name = "Numpy"
+categories = ["Python"]
+skill_level = 1
+
+[[skills]]
+name = "Django"
+categories = ["Python", "Web Development"]
+skill_level = 1
+
+[[skills]]
+name = "Android Development"
+categories = ["Mobile Development"]
+skill_level = 1
+
+[[skills]]
+name = "Git"
+categories = []
+skill_level = 5
