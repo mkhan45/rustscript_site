@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{projectName}}</title>
+  {{header}}
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="detail-container flex-parent">
+      <div class="header detail-header opaque">
+          <h1>{{projectName}}</h1>
+        <div class="detail-link">
+            <a href="https://calcula.tech">{{projectURL}}</a>
+        </div>
+        <nav class="body-center smallmenu">
+          <div>
+          <a class="linkButton" href="{{index_route}}">Home</a>
+          </div>
+          <div>
+          <a class="linkButton" href="{{portfolio_route}}">Portfolio</a>
+          </div>
+        </nav>
+      </div>
+      <div class="body-center detail-body">
+        <div class="detail-card opaque">
+        <div class="detail-img-container"><img src="{{projectThumbnail}}" class="detail-img"></div>
+            {{projectDetailDesc}}
+        </div>
+      </div>
+    </div>
+  </main>
+  {{footer}}
+</body>
+</html>

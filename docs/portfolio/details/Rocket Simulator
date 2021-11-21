@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rocket Simulator</title>
+  <link rel="stylesheet" href="css/base.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="js/pixi.min.js"></script>
+
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="detail-container flex-parent">
+      <div class="header detail-header opaque">
+          <h1>Rocket Simulator</h1>
+        <div class="detail-link">
+            <a href="https://calcula.tech">https://github.com/mkhan45/rocket_sim</a>
+        </div>
+        <nav class="body-center smallmenu">
+          <div>
+          <a class="linkButton" href="index.html">Home</a>
+          </div>
+          <div>
+          <a class="linkButton" href="portfolio.html">Portfolio</a>
+          </div>
+        </nav>
+      </div>
+      <div class="body-center detail-body">
+        <div class="detail-card opaque">
+        <div class="detail-img-container"><img src="https://mikail-khan.com/img/rocket_sim.png" class="detail-img"></div>
+            
+<p>Simulates a rocket accurately taking into account fuel, gravity, air resistance, universal gravitation,
+and more. Get into orbit around Earth, the Moon, or eventually any other planet in the Solar System.</p>
+<ul>
+    <li>
+	Controls:
+        <ul>
+            <li> Q/E for min/max throttle </li>
+            <li> A and D to tilt the rocket </li>
+            <li> Z and C to decrease/increase throttle </li>
+            <li> M to bring up the map, including a predicted trajectory. 
+                 Minimize throttle to see a longer prediction. </li>
+        </ul>
+    </li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/index.js"></script>
+
+</body>
+</html>

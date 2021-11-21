@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RustScript2</title>
+  <link rel="stylesheet" href="css/base.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="js/pixi.min.js"></script>
+
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="detail-container flex-parent">
+      <div class="header detail-header opaque">
+          <h1>RustScript2</h1>
+        <div class="detail-link">
+            <a href="https://calcula.tech">https://github.com/mkhan45/RustScript2</a>
+        </div>
+        <nav class="body-center smallmenu">
+          <div>
+          <a class="linkButton" href="index.html">Home</a>
+          </div>
+          <div>
+          <a class="linkButton" href="portfolio.html">Portfolio</a>
+          </div>
+        </nav>
+      </div>
+      <div class="body-center detail-body">
+        <div class="detail-card opaque">
+        <div class="detail-img-container"><img src="https://mikail-khan.com/img/rustscript2.png" class="detail-img"></div>
+            
+<p>RustScript2 is a functional scripting language written in OCaml with as much relation to Rust as JavaScript has to Java.</p>
+<ul>
+    <li>Expression based, fully functional language</li>
+    <li>Support for functional features such as first class/higher order functions, list comprehensions, and pattern matching</li>
+    <li>Treewalk interpreter that <a href='http://www.iro.umontreal.ca/~feeley/papers/FeeleyLapalmeCL87.pdf'>compiles to closures</a> for improved performance</li>
+    <li>Tail-Call-Optimization through trampolines</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/index.js"></script>
+
+</body>
+</html>

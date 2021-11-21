@@ -10,10 +10,16 @@ let endpoints = %{
 	template_file_string("templates/resume.html", state)
     },
     ("portfolio.html", "portfolio") => fn(gen_state) => {
-	let state = "assets/portfolio.toml" 
+	let projects = "assets/portfolio.toml" 
 	    |> read_file 
 	    |> parse_toml 
-	    |> merge_maps(_, gen_state)
+	    |> fn(m) => m("projects")
+	    |> map(
+		fn(%{"projectName" => name} as p) => 
+		    %{"projectDetailsRoute" => "portfolio/details/" + name | p}
+	    , _)
+	
+	let state = %{"projects" => projects | gen_state}
 	template_file_string("templates/portfolio.html", state)
     },
     ("css/base.css", "css") => fn(_) => {
@@ -27,6 +33,28 @@ let endpoints = %{
     }
 }
 
+let detail_endpoints = {
+    let projects = "assets/portfolio.toml"
+	|> read_file 
+	|> parse_toml
+	|> fn(m) => m("projects")
+
+    let fold_step(acc, proj) = {
+	let route = "portfolio/details/" + proj("projectName")
+	let route_name = "portfolio_details_" + proj("projectName")
+	let gen_fn = fn(gen_state) => {
+	    let state = merge_maps(proj, gen_state)
+	    template_file_string("templates/portfolio_details.html", state)
+	}
+
+	%{(route, route_name) => gen_fn | acc}
+    }
+
+    fold(%{}, fold_step, projects)
+}
+
+let endpoints = merge_maps(endpoints, detail_endpoints)
+
 let global_state = %{
     "header" => read_file("templates/header.html"),
     "footer" => read_file("templates/footer.html"),
@@ -34,4 +62,5 @@ let global_state = %{
     "liicon" => read_file("templates/li-icon.svg"),
     "linkicon" => read_file("templates/link-icon.svg")
 }
+
 gen_site(endpoints, "docs", global_state)

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CalcuLaTeX</title>
+  <link rel="stylesheet" href="css/base.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="js/pixi.min.js"></script>
+
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="detail-container flex-parent">
+      <div class="header detail-header opaque">
+          <h1>CalcuLaTeX</h1>
+        <div class="detail-link">
+            <a href="https://calcula.tech">https://calcula.tech</a>
+        </div>
+        <nav class="body-center smallmenu">
+          <div>
+          <a class="linkButton" href="index.html">Home</a>
+          </div>
+          <div>
+          <a class="linkButton" href="portfolio.html">Portfolio</a>
+          </div>
+        </nav>
+      </div>
+      <div class="body-center detail-body">
+        <div class="detail-card opaque">
+        <div class="detail-img-container"><img src="https://mikail-khan.com/img/calculatex.png" class="detail-img"></div>
+            
+<p>
+CalcuLaTeX is a pretty printing calculator language. Its goal is to make calculations easier and more presentable with real time LaTeX rendered output, support for SI units, variables, and mathematical functions.
+</p>
+<ul>
+<li>Composed of an interpreter to run the calculations and a compiler to compile expressions and their answers into LaTeX</li>
+<li>Each expression is parsed twice, once for the interpreter, and once for the compiler, in order to make LaTeX output more closely mirror user input</li>
+<li>Uses a comprehensive test suite and automated CI</li>
+<li>CalcuLaTeX is hosted as a web app on https://calcula.tech, where it has had thousands of visitors to date.</li>
+<li>300+ stars, multiple contributors on GitHub</li>
+<li>Written in Rust, website built with Elixir, Phoenix Liveview, and JavaScript</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
