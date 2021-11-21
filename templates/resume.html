@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Mikail Khan</title>
-  {{header}}
+  %include% {{templates/header.html}}
 </head>
 <body>
   <canvas id="bg"></canvas>
@@ -13,10 +13,10 @@
         <h3>mikail [at] mikail-khan [dot] com</h3><a href="https://github.com/mkhan45"><span class="icon-btn">{{ghicon}}</span></a><a href="https://www.linkedin.com/in/mikail-khan-6121921a1/"><span class="icon-btn">{{liicon}}</span></a>
         <nav class="body-center smallmenu">
           <div>
-          <a class="linkButton" href="{{index_route}}">Home</a>
+          <a class="linkButton" href="%path% {{index}}">Home</a>
           </div>
           <div>
-          <a class="linkButton" href="{{portfolio_route}}">Portfolio</a>
+          <a class="linkButton" href="%path% {{portfolio}}">Portfolio</a>
           </div>
         </nav>
       </div>
@@ -93,6 +93,6 @@
       </div>
     </div>
   </main>
-  {{footer}}
+  %include% {{templates/footer.html}}
 </body>
 </html>

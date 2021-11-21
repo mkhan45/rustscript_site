@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Mikail Khan</title>
-  {{header}}
+  %include% {{templates/header.html}}
 </head>
 <body>
   <canvas id="bg"></canvas>
@@ -26,14 +26,14 @@
         </div>
         <div class="body-center menu opaque">
           <nav>
-	  <a class="linkButton" href="{{portfolio_route}}">Portfolio</a>
-	  <a class="linkButton" href="{{resume_route}}">Resume</a>
+	  <a class="linkButton" href="%path% {{portfolio}}">Portfolio</a>
+	  <a class="linkButton" href="%path% {{resume}}">Resume</a>
           </nav>
         </div>
       </div>
     </div>
   </main>
   <!-- <script src="/js/index.js"></script> -->
-  {{footer}}
+  %include% {{templates/footer.html}}
 </body>
 </html>

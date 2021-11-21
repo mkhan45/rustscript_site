@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>{{projectName}}</title>
-  {{header}}
+  %include% {{templates/header.html}}
 </head>
 <body>
   <canvas id="bg"></canvas>
@@ -15,10 +15,10 @@
         </div>
         <nav class="body-center smallmenu">
           <div>
-          <a class="linkButton" href="{{index_route}}">Home</a>
+          <a class="linkButton" href="%path% {{index}}">Home</a>
           </div>
           <div>
-          <a class="linkButton" href="{{portfolio_route}}">Portfolio</a>
+          <a class="linkButton" href="%path% {{portfolio}}">Portfolio</a>
           </div>
         </nav>
       </div>
@@ -30,6 +30,6 @@
       </div>
     </div>
   </main>
-  {{footer}}
+  %include% {{templates/footer.html}}
 </body>
 </html>

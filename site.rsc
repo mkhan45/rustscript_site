@@ -22,7 +22,7 @@ let endpoints = %{
 	let state = %{"projects" => projects | gen_state}
 	template_file_string("templates/portfolio.html", state)
     },
-    ("css/base.css", "css") => fn(_) => {
+    ("css/base.css", "base_css") => fn(_) => {
 	read_file("assets/css/base.css")
     },
     ("js/pixi.min.js", "pixijs") => fn(_) => {
@@ -40,7 +40,7 @@ let detail_endpoints = {
 	|> fn(m) => m("projects")
 
     let fold_step(acc, proj) = {
-	let route = "portfolio/details/" + proj("projectName")
+	let route = "portfolio/details/" + proj("projectName") + ".html"
 	let route_name = "portfolio_details_" + proj("projectName")
 	let gen_fn = fn(gen_state) => {
 	    let state = merge_maps(proj, gen_state)

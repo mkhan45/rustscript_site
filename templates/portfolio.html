@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Mikail Khan</title>
-  {{header}}
+  %include% {{templates/header.html}}
 </head>
 <body>
   <canvas id="bg"></canvas>
@@ -13,10 +13,10 @@
           <h1>Projects</h1>
           <nav class="body-center smallmenu">
             <div>
-            <a class="linkButton" href="{{index_route}}">Home</a>
+            <a class="linkButton" href="%path% {{index}}">Home</a>
             </div>
             <div>
-            <a class="linkButton" href="{{resume_route}}">Resume</a>
+            <a class="linkButton" href="%path% {{resume}}">Resume</a>
             </div>
           </nav>
         </div>
@@ -24,7 +24,7 @@
           <div class="project-grid opaque">
             %startloop% {{projects}}
             <div class="project">
-	    <a href="{{projectDetailsRoute}}">
+	    <a href="{{projectDetailsRoute}}.html">
               <h1 class="align-center"><span class="align-center">{{projectName}}</span></h1><img src="{{projectThumbnail}}">
               <div class="project-desc">
                   {{projectDesc}}
@@ -36,6 +36,6 @@
       </div>
     </div>
   </main>
-  {{footer}}
+  %include% {{templates/footer.html}}
 </body>
 </html>
