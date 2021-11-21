@@ -16,7 +16,7 @@ let endpoints = %{
 	    |> fn(m) => m("projects")
 	    |> map(
 		fn(%{"projectName" => name} as p) => 
-		    %{"projectDetailsRoute" => "portfolio/details/" + name + ".html" | p}
+		    %{"projectDetailsRoute" => "portfolio/details/" + name | p}
 	    , _)
 	
 	let state = %{"projects" => projects | gen_state}
@@ -40,7 +40,7 @@ let detail_endpoints = {
 	|> fn(m) => m("projects")
 
     let fold_step(acc, proj) = {
-	let route = "portfolio/details/" + proj("projectName") + ".html"
+	let route = "portfolio/details/" + proj("projectName")
 	let route_name = "portfolio_details_" + proj("projectName")
 	let gen_fn = fn(gen_state) => {
 	    let state = merge_maps(proj, gen_state)
