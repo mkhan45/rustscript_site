@@ -18,13 +18,13 @@ let endpoints = %{
 	let projects = projects
 	    |> map(
 		fn(%{"projectName" => name} as p) => 
-		    %{"projectDetailsRoute" => gen_state(:base_route) + "/portfolio/details/" + name | p}
+		    %{"projectDetailsRoute" => gen_state(:base_route) + "/portfolio/details/" + name + ".html" | p}
 	    , _)
 	
 	let state = %{"projects" => projects | gen_state}
 	template_file_string("templates/portfolio.html", state)
     },
-    "portfolio/details/{{project_name}}" => fn(gen_state) => {
+    "portfolio/details/{{project_name}}.html" => fn(gen_state) => {
 	let project_name = gen_state("project_name")
 	let project = find(fn(p) => p("projectName") == project_name, projects)
 	
@@ -57,7 +57,7 @@ let project_pages = {
 	|> parse_toml 
 	|> fn(m) => m("projects")
 
-    ["portfolio/details/" + p("projectName") for p in projects]
+    ["portfolio/details/" + p("projectName") + ".html" for p in projects]
 }
 
 let pages = base_pages + project_pages
