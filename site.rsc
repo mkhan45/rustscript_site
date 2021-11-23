@@ -1,3 +1,8 @@
+let projects = "assets/portfolio.toml"
+    |> read_file
+    |> parse_toml
+    |> fn(m) => m("projects")
+
 let endpoints = %{
     "index.html" => fn(gen_state) => {
 	template_file_string("templates/index.html", gen_state)
@@ -10,10 +15,7 @@ let endpoints = %{
 	template_file_string("templates/resume.html", state)
     },
     "portfolio.html" => fn(gen_state) => {
-	let projects = "assets/portfolio.toml" 
-	    |> read_file 
-	    |> parse_toml 
-	    |> fn(m) => m("projects")
+	let projects = projects
 	    |> map(
 		fn(%{"projectName" => name} as p) => 
 		    %{"projectDetailsRoute" => gen_state(:base_route) + "/portfolio/details/" + name | p}
@@ -24,11 +26,7 @@ let endpoints = %{
     },
     "portfolio/details/{{project_name}}" => fn(gen_state) => {
 	let project_name = gen_state("project_name")
-	let project = "assets/portfolio.toml" 
-	    |> read_file 
-	    |> parse_toml 
-	    |> fn(m) => m("projects")
-	    |> find(fn(p) => p("projectName") == project_name, _)
+	let project = find(fn(p) => p("projectName") == project_name, projects)
 	
 	let state = merge_maps(project, gen_state)
 	template_file_string("templates/portfolio_details.html", state)
