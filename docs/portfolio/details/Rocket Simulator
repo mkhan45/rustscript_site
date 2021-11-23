@@ -18,10 +18,10 @@
         </div>
         <nav class="body-center smallmenu">
           <div>
-          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/index.html">Home</a>
+          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/index">Home</a>
           </div>
           <div>
-          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/portfolio.html">Portfolio</a>
+          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/portfolio">Portfolio</a>
           </div>
         </nav>
       </div>

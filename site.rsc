@@ -1,59 +1,68 @@
 let endpoints = %{
-    ("index.html", "index") => fn(gen_state) => {
+    "index.html" => fn(gen_state) => {
 	template_file_string("templates/index.html", gen_state)
     },
-    ("resume.html", "resume") => fn(gen_state) => {
+    "resume.html" => fn(gen_state) => {
 	let state = "assets/resume.toml" 
 	    |> read_file 
 	    |> parse_toml 
 	    |> merge_maps(_, gen_state)
 	template_file_string("templates/resume.html", state)
     },
-    ("portfolio.html", "portfolio") => fn(gen_state) => {
+    "portfolio.html" => fn(gen_state) => {
 	let projects = "assets/portfolio.toml" 
 	    |> read_file 
 	    |> parse_toml 
 	    |> fn(m) => m("projects")
 	    |> map(
 		fn(%{"projectName" => name} as p) => 
-		    %{"projectDetailsRoute" => "portfolio/details/" + name | p}
+		    %{"projectDetailsRoute" => gen_state(:base_route) + "/portfolio/details/" + name | p}
 	    , _)
 	
 	let state = %{"projects" => projects | gen_state}
 	template_file_string("templates/portfolio.html", state)
     },
-    ("css/base.css", "base_css") => fn(_) => {
+    "portfolio/details/{{project_name}}" => fn(gen_state) => {
+	let project_name = gen_state("project_name")
+	let project = "assets/portfolio.toml" 
+	    |> read_file 
+	    |> parse_toml 
+	    |> fn(m) => m("projects")
+	    |> find(fn(p) => p("projectName") == project_name, _)
+	
+	let state = merge_maps(project, gen_state)
+	template_file_string("templates/portfolio_details.html", state)
+    },
+    "css/base.css" => fn(_) => {
 	read_file("assets/css/base.css")
     },
-    ("js/pixi.min.js", "pixijs") => fn(_) => {
+    "js/pixi.min.js" => fn(_) => {
 	read_file("assets/js/pixi.min.js")
     },
-    ("js/index.js", "indexjs") => fn(_) => {
+    "js/index.js" => fn(_) => {
 	read_file("assets/js/index.js")
     }
 }
 
-let detail_endpoints = {
-    let projects = "assets/portfolio.toml"
+let base_pages = [
+    "index.html",
+    "resume.html",
+    "portfolio.html",
+    "css/base.css",
+    "js/pixi.min.js",
+    "js/index.js"
+]
+
+let project_pages = {
+    let projects = "assets/portfolio.toml" 
 	|> read_file 
-	|> parse_toml
+	|> parse_toml 
 	|> fn(m) => m("projects")
 
-    let fold_step(acc, proj) = {
-	let route = "portfolio/details/" + proj("projectName") + ".html"
-	let route_name = "portfolio_details_" + proj("projectName")
-	let gen_fn = fn(gen_state) => {
-	    let state = merge_maps(proj, gen_state)
-	    template_file_string("templates/portfolio_details.html", state)
-	}
-
-	%{(route, route_name) => gen_fn | acc}
-    }
-
-    fold(%{}, fold_step, projects)
+    ["portfolio/details/" + p("projectName") for p in projects]
 }
 
-let endpoints = merge_maps(endpoints, detail_endpoints)
+let pages = base_pages + project_pages
 
 let global_state = %{
     "header" => read_file("templates/header.html"),
@@ -63,4 +72,4 @@ let global_state = %{
     "linkicon" => read_file("templates/link-icon.svg")
 }
 
-gen_site("https://mkhan45.github.io/rustscript_site/", endpoints, "docs", global_state)
+gen_site("https://mkhan45.github.io/rustscript_site/", endpoints, pages, "docs", global_state)

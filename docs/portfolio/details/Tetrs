@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SIMple Electronics</title>
+  <title>Tetrs</title>
   <link rel="stylesheet" href="https://mkhan45.github.io/rustscript_site/css/base.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <script src="https://mkhan45.github.io/rustscript_site/js/pixi.min.js"></script>
@@ -12,30 +12,23 @@
   <main>
     <div class="detail-container flex-parent">
       <div class="header detail-header opaque">
-          <h1>SIMple Electronics</h1>
+          <h1>Tetrs</h1>
         <div class="detail-link">
-            <a href="https://calcula.tech">https://mkhan45.github.io/SIMple-Electronics</a>
+            <a href="https://calcula.tech">https://github.com/mkhan45/tetrs</a>
         </div>
         <nav class="body-center smallmenu">
           <div>
-          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/index.html">Home</a>
+          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/index">Home</a>
           </div>
           <div>
-          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/portfolio.html">Portfolio</a>
+          <a class="linkButton" href="https://mkhan45.github.io/rustscript_site/portfolio">Portfolio</a>
           </div>
         </nav>
       </div>
       <div class="body-center detail-body">
         <div class="detail-card opaque">
-        <div class="detail-img-container"><img src="https://mikail-khan.com/img/electronics.png" class="detail-img"></div>
-            
-<p>SIMple Electronics is a digital logic circuit simulator made to help explain circuits.</p>
-<ul>
-    <li>Uses an ECS based graph system to represent circuits</li>
-    <li>Compiled to WASM</li>
-    <li>Incomplete/on hold, but still useful</li>
-</ul>
-
+        <div class="detail-img-container"><img src="https://mikail-khan.com/img/tetrs.png" class="detail-img"></div>
+            A simple Tetris clone written in Rust using the <a href='https://ggez.rs'>GGEZ</a> game engine
         </div>
       </div>
     </div>
