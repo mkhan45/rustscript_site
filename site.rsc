@@ -41,14 +41,11 @@ let endpoints = %{
 	let state = merge_maps(project, gen_state)
 	template_file_string("templates/portfolio_details.html", state)
     },
-    "css/base.css" => fn(_) => {
-	read_file("assets/css/base.css")
+    "css/{{css_path}}" => fn(%{"css_path" => path}) => {
+	read_file("assets/css/" + path)
     },
-    "js/pixi.min.js" => fn(_) => {
-	read_file("assets/js/pixi.min.js")
-    },
-    "js/index.js" => fn(_) => {
-	read_file("assets/js/index.js")
+    "js/{{js_path}}" => fn(%{"js_path" => path}) => {
+	read_file("assets/js/" + path)
     }
 }
 
