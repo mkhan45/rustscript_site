@@ -54,22 +54,10 @@ let endpoints = %{
     "*" => fn(_) => "404"
 }
 
-#let base_pages = [
-#    "index.html",
-#    "resume.html",
-#    "portfolio.html",
-#    "css/base.css",
-#    "js/pixi.min.js",
-#    "js/index.js"
-#]
-#let project_pages = ["portfolio/details/" + p("projectName") + ".html" for p in projects]
-#let pages = base_pages + project_pages
-
 let global_state = %{
     "ghicon" => read_file("templates/gh-icon.svg"),
     "liicon" => read_file("templates/li-icon.svg"),
     "linkicon" => read_file("templates/link-icon.svg")
 }
 
-#gen_site("https://mkhan45.github.io/rustscript_site/", endpoints, pages, "docs", global_state)
 serve_endpoints(:tls, 8000, global_state, endpoints)
