@@ -66,4 +66,5 @@ let global_state = %{
     "linkicon" => read_file("templates/link-icon.svg")
 }
 
-gen_site("https://mkhan45.github.io/rustscript_site/", endpoints, pages, "docs", global_state)
+#gen_site("https://mkhan45.github.io/rustscript_site/", endpoints, pages, "docs", global_state)
+serve_endpoints(:tls, 8000, global_state, endpoints)
