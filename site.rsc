@@ -27,7 +27,7 @@ let endpoints = %{
 	let projects = 
 	    map(
 		fn(%{"projectName" => name} as project) => {
-		    let route = gen_state(:base_route) + "/portfolio/details/" + name + ".html"
+		    let route = "/portfolio/details/" + name + ".html"
 		    %{"projectDetailsRoute" => route | project}
 		},
 		projects
