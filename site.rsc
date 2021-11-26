@@ -3,6 +3,12 @@ let projects = "assets/portfolio.toml"
     |> read_file
     |> parse_toml
     |> fn(m) => m("projects")
+    |> map(
+	fn(project) => {
+	    let route = "/portfolio/details/" + project("projectName") + ".html"
+	    %{"projectDetailsRoute" => route | project}
+	}, _
+    )
 
 let resume = "assets/resume.toml" 
     |> read_file 
@@ -22,17 +28,6 @@ let endpoints = %{
 	template_file_string("templates/resume.html", state)
     },
     "portfolio.html" => fn(gen_state) => {
-	# adds a route to each project, must be done until templates
-	# can evaluate expressions
-	let projects = 
-	    map(
-		fn(%{"projectName" => name} as project) => {
-		    let route = "/portfolio/details/" + name + ".html"
-		    %{"projectDetailsRoute" => route | project}
-		},
-		projects
-	    )
-	
 	let state = %{"projects" => projects | gen_state}
 	template_file_string("templates/portfolio.html", state)
     },
