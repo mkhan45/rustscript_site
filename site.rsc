@@ -40,11 +40,15 @@ let endpoints = %{
 	let state = merge_maps(project, gen_state)
 	template_file_string("templates/portfolio_details.html", state)
     },
-    "css/{{css_path}}" => fn(%{"css_path" => path}, _) => {
-	read_file("assets/css/" + path)
+    "css/{{css_path}}" => fn(%{"css_path" => path}, server_state) => {
+	match read_file("assets/css/" + path)
+	    | (:err, _) -> "404"
+	    | file -> (file, server_state, %{"Content-Type" => "text/css"})
     },
-    "js/{{js_path}}" => fn(%{"js_path" => path}, _) => {
-	read_file("assets/js/" + path)
+    "js/{{js_path}}" => fn(%{"js_path" => path}, server_state) => {
+	match read_file("assets/js/" + path)
+	    | (:err, _) -> "404"
+	    | file -> (file, server_state, %{"Content-Type" => "application/javascript"})
     },
     "reload_cache" => fn(_, server_state) => {
 	("success", %{projects: read_projects(), resume: read_resume() | server_state})
