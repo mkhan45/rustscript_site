@@ -1,0 +1,72 @@
+main {
+    text-align: center;
+    padding: 1em;
+    max-width: 240px;
+    margin: 0 auto;
+}
+h1 {
+    color: #ff3e00;
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 100;
+}
+@media (min-width: 640px) {
+    main {
+        max-width: none;
+    }
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-entry {
+    font-family: sans-serif;
+    font-size: min(3em, 100%);
+    grid-column-start: auto;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    margin: 0.5em;
+    padding: 1em;
+    line-height: 1.5;
+    flex-direction: column;
+    padding-bottom: 0.5em;
+    transition: all 0.09s ease 0s;
+}
+.grid-entry .meme {
+    width: 30vw;
+    min-height: 30vh;
+    max-height: 60vh;
+}
+img {
+    object-fit: contain;
+}
+.btn {
+    font-family: sans-serif;
+    background-color: #FF6600;
+    padding: 0.5em;
+    font-size: 1.35em;
+    text-decoration: none;
+    color: black;
+}
+@media only screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-entry .meme {
+        width: 42.5vw;
+    }
+}
+@media only screen and (max-width: 982px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .grid-entry .meme {
+        width: 90vw;
+    }
+}
+@media only screen and (hover: none) {
+    .grid-header {
+        margin-bottom: 0.05em;
+    }
+}

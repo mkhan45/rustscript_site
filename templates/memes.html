@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>bad memes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="%path% {{css/Memes.css}}">
+</head>
+<body>
+  <div style="display: flex; justify-content: space-between; width: 98vw">
+    <a href="/memes/{{prev_page}}" class="btn">Previous Page</a><a href="/memes/{{next_page}}" class="btn">Next Page</a>
+  </div>
+  <div class="grid">
+    %startloop% {{memes}}
+
+    %if% {{is_youtube}}
+    <div class="grid-entry">
+	<h2><a id="{{name}}" href="#{{name}}">{{name}}</a></h2><iframe id="{{name}}_meme" title="Youtube Video" class="meme" src="{{url}}" name=
+       "{{name}}_meme">Youtube Video</iframe>
+    </div>
+    %end%
+
+    %if% {{is_mp4}}
+    <div class="grid-entry">
+    <h2><a id="{{name}}" href="#{{name}}">{{name}}</a></h2><video id="{{name}}_meme" class="meme" controls="bar"><source src=
+   "{{url}}" type="video/mp4">Unsupported browser for videos</video>
+    </div>
+    %end%
+
+    %if% {{is_img}}
+    <div class="grid-entry">
+	<h2><a id="{{name}}" href="#{{name}}">{{name}}</a></h2><a id="{{name}}_meme" href="https://imgur.com/GFimowh.jpeg"><img class="meme" src=
+       "{{url}}" alt="meme"></a>
+    </div>
+    %end%
+
+    %end%
+  </div>
+  <div style="display: flex; justify-content: space-between; width: 98vw">
+    <a href="/memes/{{prev_page}}" class="btn">Previous Page</a><a href="/memes/{{next_page}}" class="btn">Next Page</a>
+  </div>
+</body>
+</html>
