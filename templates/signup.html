@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mikail Khan</title>
+  %include% {{templates/header.html}}
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="flex-parent">
+      <div class="section">
+        <div class="header opaque">
+          <h1>Signup</h1>
+          <nav class="body-center smallmenu">
+            <div>
+            <a class="linkButton" href="%path% {{index.html}}">Home</a>
+            </div>
+          </nav>
+        </div>
+	<div class="flex-center">
+	    <div class="signup-form opaque">
+	    <form method="post" action="https://listmonk.mikail-khan.com/subscription/form" class="listmonk-form">
+		<div>
+		    <p><input type="text" name="email" placeholder="E-mail" /></p>
+		    <p><input type="text" name="name" placeholder="Name (optional)" /></p>
+
+		    <p>
+		    <input id="edc6e" type="checkbox" name="l" checked value="edc6e7b1-7f43-4773-b49b-6fb9fff48df4" />
+		    <label for="edc6e">Blog Posts</label>
+		    </p>
+
+		    <p><input type="submit" value="Subscribe" /></p>
+		</div>
+	    </form>   
+	    </div>
+	</div>
+      </div>
+  </main>
+  %include% {{templates/footer.html}}
+</body>
+</html>
