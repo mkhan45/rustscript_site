@@ -449,6 +449,35 @@ main {
     height: 100vh;
 }
 
+.signup-form {
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.signup-form * {
+    font-size: 1em;
+}
+
+.signup-form input[type=submit] {
+    display: inline-block;
+    color: var(--white);
+    border-color: var(--white);
+    border-style: solid;
+    border-radius: 0.2rem;
+    border-width: 0.1rem;
+    background: var(--main);
+    font-size: 1.25em;
+    text-align: center;
+    width: 100%;
+    transition: all 200ms ease;
+}
+
+.signup-form input[type=submit]:hover {
+    background: var(--white);
+    color: var(--main);
+    transform: scale(1.075);
+}
+
 @media only screen and (max-width: 1000px) {
     .skillTabs {
         min-height: 21.5em;

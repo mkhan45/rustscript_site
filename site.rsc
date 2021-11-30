@@ -103,6 +103,9 @@ let endpoints = %{
 		"Invalid Page"
 	    }
     },
+    "signup" => fn(gen_state, _) => {
+	template_file_string("templates/signup.html", gen_state)
+    },
     "css/{{css_path}}" => fn(%{"css_path" => path}, server_state) => {
 	match read_file("assets/css/" + path)
 	    | (:err, _) -> "404"
