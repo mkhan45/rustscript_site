@@ -14,6 +14,37 @@ let read_resume() = "assets/resume.toml"
     |> read_file 
     |> parse_toml 
 
+let read_meme_page(page) = {
+    let rows = "assets/memes.txt" 
+	    |> read_file
+	    |> to_charlist
+	    |> split(_, "\n")
+	    |> map(concat, _)
+	    |> drop(page * 12, _)
+	    |> take(12, _)
+	    |> map(to_charlist, _)
+	    |> map(split(_, " "), _)
+	    |> map(fn(ls) => map(concat, ls), _)
+    
+    # super clunky because templates can't eval expressions yet
+    let to_meme([type, name, url]) = {
+	let (is_img, is_youtube, is_mp4) = match type
+	    | "image" -> (T, (), ())
+	    | "Youtube" -> ((), T, ())
+	    | "MP4" | "mp4" -> ((), (), T)
+	
+	%{
+	    "type" => type,
+	    "name" => name,
+	    "url" => url,
+	    "is_img" => is_img,
+	    "is_youtube" => is_youtube,
+	    "is_mp4" => is_mp4
+	}
+    }
+
+    map(to_meme, rows)
+}
 # each endpoint is a route that uses a generator function
 # to generate the page
 let endpoints = %{
@@ -39,6 +70,38 @@ let endpoints = %{
 	
 	let state = merge_maps(project, gen_state)
 	template_file_string("templates/portfolio_details.html", state)
+    },
+    "memes" => fn(gen_state, _) => {
+	let memes = read_meme_page(0)
+	let state = %{"memes" => memes, "prev_page" => "-1", "next_page" => "1" | gen_state}
+	template_file_string("templates/memes.html", state)
+    },
+    "memes/{{page}}" => fn(gen_state, _) => {
+	match string_to_int(gen_state("page"))
+	    | (:ok, page) -> {
+		let prev_page = to_string(page - 1)
+		let next_page = to_string(page + 1)
+		let page = if page < 0 then {
+		    let n_pages = "assets/memes.txt" 
+			|> read_file 
+			|> to_charlist
+			|> split(_, "\n")
+			|> length
+			|> div(_, 12)
+			|> truncate
+
+		    n_pages + page
+		} else {
+		    page
+		}
+
+		let memes = read_meme_page(page)
+		let state = %{"memes" => memes, "prev_page" => prev_page, "next_page" => next_page | gen_state}
+		template_file_string("templates/memes.html", state)
+	    }
+	    | :err -> {
+		"Invalid Page"
+	    }
     },
     "css/{{css_path}}" => fn(%{"css_path" => path}, server_state) => {
 	match read_file("assets/css/" + path)
