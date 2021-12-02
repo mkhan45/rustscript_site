@@ -85,22 +85,26 @@ let endpoints = %{
 	template_file_string("templates/meme_submit.html", state)
     },
     (:post, "memes/submit") => fn(gen_state, _) => {
-	let %{
+	if let (:ok, %{
 	    "type" => type,
 	    "title" => title,
 	    "url" => url,
 	    "password" => password
-	} = gen_state(:body) |> parse_urlencoded
+	}) = gen_state(:body) |> inspect |> parse_urlencoded then {
 
-	if validate_pass(password, pass_hash()) then {
-	    let row = concat_sep([type, title, url], " ")
-	    let file_contents = read_file("assets/memes.txt")
-	    let new_file_contents = row + "\n" + file_contents
+	    if validate_pass(password, pass_hash()) then {
+		let row = concat_sep([type, title, url], " ")
+		let file_contents = read_file("assets/memes.txt")
+		let new_file_contents = row + "\n" + file_contents
 
-	    write_file("assets/memes.txt", new_file_contents)
-	    "<script>window.location.replace(\"/memes/submit\")</script>"
+		write_file("assets/memes.txt", new_file_contents)
+		"<script>window.location.replace(\"/memes/submit\")</script>"
+	    } else {
+		"incorrect password"
+	    }
+
 	} else {
-	    "incorrect password"
+	    "invalid request"
 	}
     },
     "memes/{{page}}" => fn(gen_state, _) => {
