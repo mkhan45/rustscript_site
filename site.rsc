@@ -14,6 +14,8 @@ let read_resume() = "assets/resume.toml"
     |> read_file 
     |> parse_toml 
 
+let pass_hash() = "$2y$06$mJH2mI0Pvdos6cV0BFjlmukI.UOvSH4b5SNZZhIZdwDqxsZXc9Xc."
+
 let read_meme_page(page) = {
     let rows = "assets/memes.txt" 
 	    |> read_file
@@ -45,6 +47,7 @@ let read_meme_page(page) = {
 
     map(to_meme, rows)
 }
+
 # each endpoint is a route that uses a generator function
 # to generate the page
 let endpoints = %{
@@ -75,6 +78,30 @@ let endpoints = %{
 	let memes = read_meme_page(0)
 	let state = %{"memes" => memes, "prev_page" => "-1", "next_page" => "1" | gen_state}
 	template_file_string("templates/memes.html", state)
+    },
+    "memes/submit" => fn(gen_state, _) => {
+	let memes = read_meme_page(0)
+	let state = %{"memes" => memes | gen_state}
+	template_file_string("templates/meme_submit.html", state)
+    },
+    (:post, "memes/submit") => fn(gen_state, _) => {
+	let %{
+	    "type" => type,
+	    "title" => title,
+	    "url" => url,
+	    "password" => password
+	} = gen_state(:body) |> parse_urlencoded
+
+	if validate_pass(password, pass_hash()) then {
+	    let row = concat_sep([type, title, url], " ")
+	    let file_contents = read_file("assets/memes.txt")
+	    let new_file_contents = row + "\n" + file_contents
+
+	    write_file("assets/memes.txt", new_file_contents)
+	    "<script>window.location.replace(\"/memes/submit\")</script>"
+	} else {
+	    "incorrect password"
+	}
     },
     "memes/{{page}}" => fn(gen_state, _) => {
 	match string_to_int(gen_state("page"))
@@ -119,7 +146,7 @@ let endpoints = %{
     "reload_cache" => fn(_, server_state) => {
 	("success", %{projects: read_projects(), resume: read_resume() | server_state})
     },
-    "*" => fn(_, _) => "404"
+    (:any, "*") => fn(_, _) => "404"
 }
 
 let global_state = %{

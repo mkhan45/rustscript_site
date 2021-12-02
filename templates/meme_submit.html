@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html style="font-family: sans-serif">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
+  <title></title>
+</head>
+<body>
+  <h1>Memes</h1>
+  <form action="/memes/submit" method="post">
+    <table style="width: 100vw; text-align: left">
+      <tr>
+        <th>Type</th>
+        <th>Title</th>
+        <th>URL</th>
+      </tr>
+      %startloop% {{memes}}
+      <tr>
+        <th>{{type}}</th>
+	<th>{{name}}</th>
+        <th>
+	    <a href="{{url}}">{{url}}</a>
+        </th>
+      </tr>
+      %end%
+      <tr>
+        <th><input type="text" name="type"></th>
+        <th><input type="text" name="title"></th>
+        <th><input type="text" name="url"></th>
+      </tr>
+    </table><input type="password" name="password"><input type="submit" value="Add Meme">
+  </form>
+</body>
+</html>
