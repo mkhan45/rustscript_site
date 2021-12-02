@@ -84,13 +84,13 @@ let endpoints = %{
 	let state = %{"memes" => memes | gen_state}
 	template_file_string("templates/meme_submit.html", state)
     },
-    (:post, "memes/submit") => fn(gen_state, _) => {
+    (:post, "memes/submit") => fn(gen_state, server_state) => {
 	if let (:ok, %{
 	    "type" => type,
 	    "title" => title,
 	    "url" => url,
 	    "password" => password
-	}) = gen_state(:body) |> inspect |> parse_urlencoded then {
+	}) = gen_state(:body) |> parse_urlencoded then {
 
 	    if validate_pass(password, pass_hash()) then {
 		let row = concat_sep([type, title, url], " ")
@@ -98,7 +98,7 @@ let endpoints = %{
 		let new_file_contents = row + "\n" + file_contents
 
 		write_file("assets/memes.txt", new_file_contents)
-		"<script>window.location.replace(\"/memes/submit\")</script>"
+		("", server_state, %{"Location" => "/memes/submit"}, 302)
 	    } else {
 		"incorrect password"
 	    }
@@ -140,17 +140,17 @@ let endpoints = %{
     "css/{{css_path}}" => fn(%{"css_path" => path}, server_state) => {
 	match read_file("assets/css/" + path)
 	    | (:err, _) -> "404"
-	    | file -> (file, server_state, %{"Content-Type" => "text/css"})
+	    | file -> (file, server_state, %{"Content-Type" => "text/css"}, 200)
     },
     "js/{{js_path}}" => fn(%{"js_path" => path}, server_state) => {
 	match read_file("assets/js/" + path)
 	    | (:err, _) -> "404"
-	    | file -> (file, server_state, %{"Content-Type" => "application/javascript"})
+	    | file -> (file, server_state, %{"Content-Type" => "application/javascript"}, 200)
     },
     "reload_cache" => fn(_, server_state) => {
-	("success", %{projects: read_projects(), resume: read_resume() | server_state})
+	("success", %{projects: read_projects(), resume: read_resume() | server_state}, %{}, 200)
     },
-    (:any, "*") => fn(_, _) => "404"
+    (:any, "*") => fn(_, server_state) => ("404", server_state, %{}, 404)
 }
 
 let global_state = %{
