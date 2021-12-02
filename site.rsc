@@ -28,7 +28,7 @@ let read_meme_page(page) = {
 	    |> map(split(_, " "), _)
 	    |> map(fn(ls) => map(concat, ls), _)
     
-    # super clunky because templates can't eval expressions yet
+    # super clunky because templates cant eval expressions yet
     let to_meme([type, name, url]) = {
 	let (is_img, is_youtube, is_mp4) = match type
 	    | "image" -> (T, (), ())
