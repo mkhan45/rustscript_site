@@ -70,9 +70,12 @@ let endpoints = %{
 
 	let project_name = gen_state("project_name")
 	let project = find(fn(p) => p("projectName") == project_name, projects)
-	
-	let state = merge_maps(project, gen_state)
-	template_file_string("templates/portfolio_details.html", state)
+	match project
+	    | () -> "project not found"
+	    | _ -> {
+		let state = merge_maps(project, gen_state)
+		template_file_string("templates/portfolio_details.html", state)
+	    }
     },
     "memes" => fn(gen_state, _) => {
 	let memes = read_meme_page(0)
