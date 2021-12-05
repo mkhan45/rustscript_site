@@ -16,6 +16,14 @@ let read_resume() = "assets/resume.toml"
 
 let pass_hash() = "$2y$06$mJH2mI0Pvdos6cV0BFjlmukI.UOvSH4b5SNZZhIZdwDqxsZXc9Xc."
 
+let count_meme_pages() = "assets/memes.txt"
+    |> read_file
+    |> to_charlist
+    |> split(_, "\n")
+    |> length
+    |> div(_, 12)
+    |> truncate
+
 let read_meme_page(page) = {
     let rows = "assets/memes.txt" 
 	    |> read_file
@@ -115,19 +123,10 @@ let endpoints = %{
 	    | (:ok, page) -> {
 		let prev_page = to_string(page - 1)
 		let next_page = to_string(page + 1)
-		let page = if page < 0 then {
-		    let n_pages = "assets/memes.txt" 
-			|> read_file 
-			|> to_charlist
-			|> split(_, "\n")
-			|> length
-			|> div(_, 12)
-			|> truncate
-
-		    n_pages + page
-		} else {
+		let page = if page < 0 then
+		    count_meme_pages() + page
+		else
 		    page
-		}
 
 		let memes = read_meme_page(page)
 		let state = %{"memes" => memes, "prev_page" => prev_page, "next_page" => next_page | gen_state}
