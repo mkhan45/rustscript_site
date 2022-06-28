@@ -158,6 +158,31 @@ My personal website.
 """
 
 [[projects]]
+projectName = "Rust Macroquad Playground"
+projectURL = "https://macroquad.purduehackers.com"
+projectThumbnail = "/img/macroquad_playground.png"
+projectDesc = "An in-browser editor to help beginners make Macroquad games with Rust."
+projectDetailDesc = """
+<p>
+An in-browser editor to help beginners make Macroquad games with Rust. Written to
+help beginners during Purdue Hackers workshops. The backend uses Elixir and Plug-Cowboy,
+it's hosted on fly.io machines as a FaaS to reduce costs.
+</p>
+"""
+
+[[projects]]
+projectName = "SSH Connect 4"
+projectURL = "https://github.com/mkhan45/ssh_game"
+projectThumbnail = "/img/cn4.png"
+projectDesc = "A multiplayer connect four server running over SSH"
+projectDetailDesc = """
+<p>
+A somewhat game-agnostic server written in Elixir using Erlang's ssh module. Connect to it with:
+<br>
+<code>ssh ssh_game.fly.dev</code></p>
+"""
+
+[[projects]]
 projectName = "Pumice"
 projectURL = "https://github.com/mkhan45/pumice"
 projectThumbnail = "https://mikail-khan.com/img/pumice.png"
