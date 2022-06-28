@@ -2,9 +2,27 @@ name = "Mikail Khan"
 email = "mikail [at] mikail-khan [dot] com"
 
 [[experience]]
+name = "Google Summer of Code (Scala Center)"
+url = "https://static.mikail-khan.com/gsoc-proposal.pdf"
+timeframe = "2022 Summer"
+categories = ["Scala", "PL Dev"]
+description = [
+    "Implementing a GUI eDSL into a generative art library to enhance user experience and productivity"
+]
+
+[[experience]]
+name = "Programming Languages Research, Purdue University"
+url = "https://www.purdue.edu/"
+timeframe = "2022 Summer"
+categories = ["Scala", "PL Dev"]
+description = [
+    "Developing a Datalog interpreter and deriving a compiler from it using staging and the LMS framework"
+]
+
+[[experience]]
 name = "Intern, Frontier Technology, Inc."
 url = "https://www.fti-net.com/"
-timeframe = "2021 Summer"
+timeframe = "July - December 2021"
 categories = ["C++, Python"]
 description = [
     "Overhauled internal web application UX to improve employee efficiency",
@@ -96,8 +114,8 @@ name = "Purdue University"
 timeframe = "2020-Present"
 url = "https://www.purdue.edu/"
 description = [
-    "Math + Computer Science Major",
-    "3.9 GPA"
+    "Computer Science Major + Math Minor",
+    "3.82 GPA"
 ]
 
 [[education]]
@@ -118,13 +136,9 @@ description = []
 name = "Relevant Coursework"
 description = [
     """
-    Past: AP Computer Science A + Datastructures, Web + Mobile App Development, 
-    Artificial Intelligence, Multivariable Calculus, Analog + Digital Electronics
+    Compilers, Computer Architecture, Data Structures & Algorithms, Artificial Intelligence, Web/Mobile Development,
+    C Programming, Multivariable Calculus, Discrete Math, Bowling
     """,
-
-    "Fall: Statistics for Undergraduates, Physics 172 Mechanics",
-
-    "Spring: Programming I, Chemistry 115"
 ]
 
 [[skills]]
@@ -165,6 +179,11 @@ skill_level = 3
 [[skills]]
 name = "Golang"
 categories = ["Programming Language", "Web Development"]
+skill_level = 3
+
+[[skills]]
+name = "OCaml"
+categories = ["Programming Language"]
 skill_level = 3
 
 [[skills]]

@@ -147,6 +147,11 @@ let endpoints = %{
 	    | (:err, _) -> "404"
 	    | file -> (file, server_state, %{"Content-Type" => "application/javascript"}, 200)
     },
+    "img/{{img_path}}" => fn(%{"img_path" => path}, server_state) => {
+	match read_file("assets/img/" + path)
+	    | (:err, _) -> "404"
+	    | file -> (file, server_state, %{"Content-Type" => "img/png"}, 200)
+    },
     "reload_cache" => fn(_, server_state) => {
 	("success", %{projects: read_projects(), resume: read_resume() | server_state}, %{}, 200)
     },

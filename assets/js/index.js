@@ -1,3 +1,7 @@
+// hack
+//document.querySelector(".resume .skills").innerHTML = 
+//	document.querySelector(".resume .skills").innerHTML.trimEnd().slice(0, -1)
+
 const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 if (screen.width >= 768 && !mediaQuery.matches) {
 	const pixiApp = new PIXI.Application({ 
@@ -44,7 +48,7 @@ if (screen.width >= 768 && !mediaQuery.matches) {
 		    bounding_box.x += left_edge;
 		    bounding_box.y += top_edge;
 		
-		    return x > bounding_box.x && x < bounding_box.x + bounding_box.width
+		    return x > bounding_box.x - offset && x < bounding_box.x + bounding_box.width + offset
 			&& y > bounding_box.y && y < bounding_box.y + bounding_box.height;
 		});
 
@@ -135,3 +139,4 @@ if (screen.width >= 768 && !mediaQuery.matches) {
 	    });
 	});
 }
+
