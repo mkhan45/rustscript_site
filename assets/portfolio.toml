@@ -214,3 +214,28 @@ projectDetailDesc = """
     <li>Handwritten animation and particle systems</li>
 </ul>
 """
+
+[[projects]]
+projectName = "OCaml Canvas Pong"
+projectURL = "https://pong.mikail-khan.com"
+projectThumbnail = "https://static.mikail-khan.com/img/pong.png"
+projectDesc = "Pong with AI written in OCaml"
+projectDetailDesc = """
+<p>Pong</p>
+<ul>
+    <li>Uses js_of_ocaml with PIXI.js</li>
+</ul>
+"""
+
+[[projects]]
+projectName = "Cloth Simulator"
+projectURL = "https://cloth.mikail-khan.com"
+projectThumbnail = "https://static.mikail-khan.com/img/cloth.png"
+projectDesc = "Cloth sim with Verlet Integration"
+projectDetailDesc = """
+<p>Cloth Simulator</p>
+<ul>
+    <li>Uses Verlet Integration</li>
+    <li>Written in Rust</li>
+</ul>
+"""
