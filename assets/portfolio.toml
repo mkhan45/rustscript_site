@@ -1,4 +1,17 @@
 [[projects]]
+projectName = "FlashFill--"
+projectURL = "https://mkhan45.github.io/learning_synthesis/"
+projectThumbnail = "https://static.mikail-khan.com/flashfill.png"
+projectDesc = "A VSA-based program synthesizer"
+projectDetailDesc = """
+<p>
+A VSA-based string transformation program synthesizer based on
+<a href="https://dl.acm.org/doi/10.1145/3434335">Duet</a>. Find
+more details on <a href="https://github.com/mkhan45/learning_synthesis">the GitHub page</a>
+<p>
+"""
+
+[[projects]]
 projectName = "CalcuLaTeX"
 projectURL = "https://calcula.tech"
 projectThumbnail = "https://mikail-khan.com/img/calculatex.png"
