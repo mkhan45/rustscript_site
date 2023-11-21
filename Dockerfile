@@ -4,6 +4,7 @@
 # ├── rustscript_site
 # ├── rustscript_toml
 # └── rustscript_web
+# docker run -p 8000:8000 --rm --it site sh
 
 FROM mkhan45/rustscript
 

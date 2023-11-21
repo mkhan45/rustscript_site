@@ -158,16 +158,17 @@ projectDetailDesc = """
 
 [[projects]]
 projectName = "mikail-khan.com"
-projectURL = "https://github.com/mkhan45/mikail-khan.com"
+projectURL = "https://github.com/mkhan45/rustscript_site"
 projectThumbnail = "https://mikail-khan.com/img/site.png"
-projectDesc = "My personal website. Built with Haskell's Servant and Blaze-HTML"
+projectDesc = "My personal website, built in RustScript2, my own language"
 projectDetailDesc = """
 My personal website.
 <ul>
-    <li>Written in Haskell using the Servant Web framework</li>
-    <li>Uses the Blaze-HTML DSL for markup</li>
+    <li>Written in RustScript2, my own language</li>
+    <li>Uses a custom templating engine and TOML parser</li>
     <li>Includes a template caching system to decrease server load</li>
     <li>Reads resume/portfolio details from TOML files to generate pages</li>
+</ul>
 """
 
 [[projects]]
