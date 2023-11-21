@@ -12,6 +12,21 @@ more details on <a href="https://github.com/mkhan45/learning_synthesis">the GitH
 """
 
 [[projects]]
+projectName = "Scalogic"
+projectURL = "https://mkhan45.github.io/scalogic/"
+projectThumbnail = "https://static.mikail-khan.com/scalogic.png"
+projectDesc = "A simple logic programming language"
+projectDetailDesc = """
+<p>
+A simple logic programming language written in Scala. Solves
+facts and relations with unification. Uses a top-down evaluation
+strategy that accumulates relations onto the working expression.
+I didn't do a lot of reading on evaluation strategies, so I'm not
+sure where it fits.
+<p>
+"""
+
+[[projects]]
 projectName = "CalcuLaTeX"
 projectURL = "https://calcula.tech"
 projectThumbnail = "https://mikail-khan.com/img/calculatex.png"
