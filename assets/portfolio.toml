@@ -1,4 +1,16 @@
 [[projects]]
+projectName = "Interactive BitVector Program Synthesizer"
+projectURL = "https://github.com/tarinduj/cs560-project"
+projectThumbnail = "https://static.mikail-khan.com/560proj.png"
+projectDesc = "A program synthesizer that generates differentiating inputs (likely edge cases)"
+projectDetailDesc = """
+<p>
+A final project for CS 560 that uses Z3 to enable users to interactively specify programs by
+suggesting differentiating inputs and allowing users to choose the correct output.
+<p>
+"""
+
+[[projects]]
 projectName = "FlashFill--"
 projectURL = "https://mkhan45.github.io/learning_synthesis/"
 projectThumbnail = "https://static.mikail-khan.com/flashfill.png"
