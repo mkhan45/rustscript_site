@@ -1,4 +1,26 @@
 [[projects]]
+projectName = "Discord Microblog CMS"
+projectURL = "https://github.com/mkhan45/interactive_vsa"
+projectThumbnail = "https://static.mikail-khan.com/discordcms.png"
+projectDesc = "A microblog that uses Discord bot DMs as a CMS"
+projectDetailDesc = """
+<p>
+Made at a hackathon that I didn't sign up for
+<p>
+"""
+
+[[projects]]
+projectName = "Interactive VSA Synthesizer"
+projectURL = "https://github.com/mkhan45/interactive_vsa"
+projectThumbnail = "https://static.mikail-khan.com/vsa.png"
+projectDesc = "A WIP interactive program synthesizer"
+projectDetailDesc = """
+<p>
+todo: write stuff
+<p>
+"""
+
+[[projects]]
 projectName = "Interactive BitVector Program Synthesizer"
 projectURL = "https://github.com/tarinduj/cs560-project"
 projectThumbnail = "https://static.mikail-khan.com/560proj.png"
