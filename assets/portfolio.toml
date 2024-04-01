@@ -1,6 +1,6 @@
 [[projects]]
 projectName = "Discord Microblog CMS"
-projectURL = "https://github.com/mkhan45/interactive_vsa"
+projectURL = "https://blog.mikail-khan.com/updates"
 projectThumbnail = "https://static.mikail-khan.com/discordcms.png"
 projectDesc = "A microblog that uses Discord bot DMs as a CMS"
 projectDetailDesc = """
@@ -243,6 +243,17 @@ projectDetailDesc = """
 A somewhat game-agnostic server written in Elixir using Erlang's ssh module. Connect to it with:
 <br>
 <code>ssh ssh_game.fly.dev</code></p>
+"""
+
+[[projects]]
+projectName = "Telnet Messenger"
+projectURL = "https://github.com/mkhan45/elixir_telnet_messager"
+projectThumbnail = "https://static.mikail-khan.com/telnet.png"
+projectDesc = "A telnet messaging server written to learn Elixir/OTP"
+projectDetailDesc = """
+<p>
+I probably should've just used Agents instead of GenServers
+<p>
 """
 
 [[projects]]
