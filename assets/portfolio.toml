@@ -61,6 +61,19 @@ sure where it fits.
 """
 
 [[projects]]
+projectName = "Cloth Simulator"
+projectURL = "https://cloth.mikail-khan.com"
+projectThumbnail = "https://static.mikail-khan.com/img/cloth.png"
+projectDesc = "Cloth sim with Verlet Integration"
+projectDetailDesc = """
+<p>Cloth Simulator</p>
+<ul>
+    <li>Uses Verlet Integration</li>
+    <li>Written in Rust</li>
+</ul>
+"""
+
+[[projects]]
 projectName = "CalcuLaTeX"
 projectURL = "https://calcula.tech"
 projectThumbnail = "https://mikail-khan.com/img/calculatex.png"
@@ -302,14 +315,12 @@ projectDetailDesc = """
 """
 
 [[projects]]
-projectName = "Cloth Simulator"
-projectURL = "https://cloth.mikail-khan.com"
-projectThumbnail = "https://static.mikail-khan.com/img/cloth.png"
-projectDesc = "Cloth sim with Verlet Integration"
+projectName = "Two Player Flappy Bird"
+projectURL = "https://mkhan45.github.io/two-flappy/"
+projectThumbnail = "https://static.mikail-khan.com/twoflappy.png"
+projectDesc = "Sketchy two player flappy bird from high school"
 projectDetailDesc = """
-<p>Cloth Simulator</p>
-<ul>
-    <li>Uses Verlet Integration</li>
-    <li>Written in Rust</li>
-</ul>
+<p>
+It's actually pretty fun
+</p>
 """
