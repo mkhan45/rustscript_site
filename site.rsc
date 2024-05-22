@@ -167,6 +167,12 @@ let endpoints = %{
     "reload_cache" => fn(_, server_state) => {
 	("success", %{projects: read_projects(), resume: read_resume() | server_state}, %{}, 200)
     },
+    "friends" => fn(gen_state, _) => {
+        let friends = "assets/friends.toml" |> read_file |> parse_toml
+        let content = template_file_string("templates/friends.html", friends)
+        let state = %{"content" => content, "title" => "Cool People" | gen_state}
+	template_file_string("templates/generic.html", state)
+    },
     (:any, "*") => fn(_, server_state) => ("404", server_state, %{}, 404)
 }
 
