@@ -1,0 +1,44 @@
+[[friends]]
+name = "Aref Malek"
+url = "https://arefmalek.github.io/"
+tagline = "SWE / AI"
+
+[[friends]]
+name = "Bhavesh Pareek"
+url = "https://bhavesh.dev/about"
+tagline = "SWE / hosting etc"
+
+[[friends]]
+name = "Cole Roberts"
+url = "https://coleroberts.dev"
+tagline = "Systems/OS"
+
+[[friends]]
+name = "Harmya Bhatt"
+url = "https://harmya.me/"
+tagline = "AI"
+
+[[friends]]
+name = "Jacob Zietek"
+url = "https://www.zietek.dev/"
+tagline = "Robotics / AI"
+
+[[friends]]
+name = "Jinen Setpal"
+url = "https://jinen.setpal.net/"
+tagline = "ML Interpretability"
+
+[[friends]]
+name = "Nicholas Wade"
+url = "https://wade.dev/about/"
+tagline = "Robotics / AI"
+
+[[friends]]
+name = "Sagar Patil"
+url = "https://sagarpatil.me/"
+tagline = "Nerd"
+
+[[friends]]
+name = "Vincent Vu"
+url = "https://vivcoding.github.io/"
+tagline = "ML/PL"

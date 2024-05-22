@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mikail Khan</title>
+  %include% {{templates/header.html}}
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <main>
+    <div class="flex-parent">
+      <div class="section">
+        <div class="header center-page opaque" 
+            style="margin-top: 2vh; margin-bottom: 0em; padding-bottom: 0.5em; display: flex;
+            justify-content: space-between">
+          <h1 style="margin-left: 0px; text-align: left; margin-bottom: 0em; display: inline-block;
+                     font-size: 2.25em; max-width: 15ch">
+              <a href="/" style="color: black">Mikail Khan</a>
+          </h1>
+          <nav style="text-align: center; display: inline-block; align-self: end; justify-self: end">
+	  <a class="linkButton" style="width: 9ch;" href="%path% {{portfolio.html}}">Projects</a>
+	  <a class="linkButton" style="width: 9ch;" href="https://blog.mikail-khan.com">Blog</a>
+	  <a class="linkButton" style="width: 9ch;" href="https://blog.mikail-khan.com/updates">Updates</a>
+	  <!-- <a class="linkButton" href="%path% {{resume.html}}">Resume</a> -->
+          </nav>
+        </div>
+        <div class="body-center opaque about-me" style="margin-top: 0.5em">
+            <h2>{{title}}</h2>
+            {{content}}
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- <script src="/js/index.js"></script> -->
+  %include% {{templates/footer.html}}
+</body>
+</html>
