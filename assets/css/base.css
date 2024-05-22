@@ -571,6 +571,11 @@ main {
     .skillTabs {
         min-height: 18em;
     }
+
+    .about-me {
+        outline: none;
+        border-top: 0.25rem solid var(--highlight);
+    }
 }
 
 @media only screen and (max-width: 600px) {
