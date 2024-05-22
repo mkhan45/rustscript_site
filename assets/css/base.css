@@ -1,8 +1,13 @@
 :root {
 	/* --main: #FC6261; */
-	--main: #6192F4;
+	/* --main: #6192F4; */
 	/* --main: #000000; */
-	--white: #FFFFFF;
+        --main: #F8FAFC;
+        --main-transparent: #F8FAFCB0;
+        --highlight: #6192F4;
+	/* --white: #FFFFFF; */
+	--white: #F8FAFC;
+        --text: black;
 }
 
 html, body {
@@ -29,11 +34,13 @@ html, body {
 }
 
 .opaque {
-    /* background: var(--main); */
+    background: var(--main-transparent);
+    /* backdrop-filter: blur(1px); */
+    /* box-shadow: 0px 0px 15px 7px var(--main-transparent); */
 }
 
 .header {
-    max-width: 400px;
+    max-width: 800px;
     margin: auto;
     margin-top: 17.5vh;
     padding: 2em;
@@ -80,7 +87,7 @@ html, body {
 }
 
 h1, h2, h3, p {
-    color: var(--white);
+    color: var(--text);
 }
 
 .project-grid {
@@ -143,19 +150,19 @@ h1, h2, h3, p {
 
 .icon {
     width: 3.5rem;
-    fill: var(--white);
-    stroke: var(--white);
+    fill: var(--text);
+    stroke: var(--text);
     transition: all 200ms ease;
 }
 
 .icon:hover {
-    fill: var(--main);
-    stroke: var(--white);
+    fill: var(--highlight);
+    stroke: var(--highlight);
 }
 
 .link-icon .icon {
-    stroke: var(--main);
-    fill: var(--main);
+    stroke: var(--highlight);
+    fill: var(--highlight);
     position: relative;
     top: 0.25em;
     height: 1.25em;
@@ -165,8 +172,8 @@ h1, h2, h3, p {
 }
 
 .star-icon .icon {
-    stroke: var(--main);
-    fill: var(--main);
+    stroke: var(--highlight);
+    fill: var(--highlight);
     width: 1.5rem;
 }
 
@@ -179,7 +186,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    max-width: 400px;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -195,26 +202,30 @@ a {
 .smallmenu .linkButton {
     font-size: 1.5em;
     padding: 0.5em;
-    min-width: 4em;
+    min-width: 3em;
 }
 
 .linkButton {
     display: inline-block;
-    font-size: 1.8rem;
-    padding: 0.5rem;
-    color: var(--white);
-    border-color: var(--white);
-    border-style: solid;
-    border-radius: 0.4rem;
-    border-width: 0.15rem;
-    transition: all 200ms ease;
-    margin: 0.5em;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 0.25rem;
+    color: var(--text);
+    /* border-color: var(--white); */
+    /* border-style: solid; */
+    /* border-radius: 0.4rem; */
+    /* border-width: 0.15rem; */
+    border-bottom: 0.4rem solid var(--highlight);
+    transition: all 50ms linear;
+    margin: 0.25em;
 }
 
 .linkButton:hover {
-    background: var(--white);
-    color: var(--main);
-    transform: scale(1.075);
+    border-bottom: 0.8rem solid var(--highlight);
+    margin-bottom: calc(0.25em - 0.35rem);
+    /* background: var(--white); */
+    /* color: var(--main); */
+    /* transform: scale(1.075); */
 }
 
 .resume {
@@ -395,7 +406,7 @@ h3 .timeframe {
 .detail-link a {
     font-size: 1.5em;
     text-decoration: underline;
-    color: white;
+    color: var(--highlight);
 }
 
 .detail-header {
@@ -476,6 +487,42 @@ main {
     background: var(--white);
     color: var(--main);
     transform: scale(1.075);
+}
+
+.about-me {
+    max-width: 800px;
+    margin: auto;
+    background: var(--white);
+    outline: 0.25rem solid var(--highlight);
+    min-height: 50vh;
+    padding: 1em;
+    font-size: 1em;
+}
+
+.about-me h2 {
+    color: black;
+    /* text-align: center; */
+    margin-bottom: 0em;
+}
+
+.about-me p {
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.about-me ul {
+    font-size: 1.4em;
+}
+
+.about-me a {
+    text-decoration: underline;
+    text-decoration-color: var(--highlight);
+    color: var(--text);
+    text-decoration-thickness: 3px;
+}
+
+.about-me a:hover {
+    text-decoration-thickness: 5px;
 }
 
 @media only screen and (max-width: 1000px) {
