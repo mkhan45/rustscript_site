@@ -1,6 +1,6 @@
 A server for my personal resume/portfolio, written completely in [RustScript](https://mkhan45.github.io/RustScript2)
 
-<https://rustscript.mikail-khan.com/>
+<https://mikail-khan.com/>
 
 ___
 

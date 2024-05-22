@@ -2,12 +2,17 @@
 //document.querySelector(".resume .skills").innerHTML = 
 //	document.querySelector(".resume .skills").innerHTML.trimEnd().slice(0, -1)
 
+const bg_color = 0xe9e9ed;
+const dot_color = 0x6192f4;
+
 const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 if (screen.width >= 768 && !mediaQuery.matches) {
 	const pixiApp = new PIXI.Application({ 
 	    view: document.querySelector("#bg"),
 	    antialias: true,
-	    backgroundColor: 0x6192f4,
+            transparent: true,
+	    // backgroundColor: bg_color,
+	    // backgroundColor: 0x6192f4,
 	    autoResize: true,
 	    resolution: devicePixelRatio,
 	});
@@ -28,13 +33,13 @@ if (screen.width >= 768 && !mediaQuery.matches) {
 	const obstructingElements = [...document.querySelectorAll(".opaque")];
 
 	// initialize circles into particle container
-	const radius = 2.75;
-	const offset = radius * 30.0;
+	const radius = 4.0;
+	const offset = radius * 27.5;
 	const num_rows = pixiApp.screen.height / offset;
 	const num_cols = pixiApp.screen.width / offset;
 
 	let container = new PIXI.ParticleContainer();
-	let circle_geom = new PIXI.Graphics().beginFill(0xffffff).drawCircle(0, 0, radius).endFill();
+	let circle_geom = new PIXI.Graphics().beginFill(dot_color).drawCircle(0, 0, radius).endFill();
 	let circle_texture = pixiApp.renderer.generateTexture(circle_geom);
 	let circles = [];
 
@@ -132,7 +137,7 @@ if (screen.width >= 768 && !mediaQuery.matches) {
 		    let rad_sqr = x_rad * x_rad + y_rad * y_rad;
 
 		    line_geom
-			.lineStyle(Math.min(5000 / Math.max(rad_sqr, 1), 5), 0xffffff)
+			.lineStyle(Math.min(6000 / Math.max(rad_sqr, 1), 5), dot_color)
 			.moveTo(mouse_x, mouse_y)
 			.lineTo(circle.sprite.x + radius, circle.sprite.y + radius);
 		}
