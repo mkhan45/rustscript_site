@@ -102,10 +102,10 @@ h1, h2, h3, p {
     background: var(--white);
     flex-basis: 25em;
     overflow: hidden;
-    border-radius: 0.2em;
+    outline: 0.25rem solid var(--highlight);
     border-style: solid;
-    border-width: 0.075rem;
-    border-color: #d6d6d6;
+    border-width: 0.25rem;
+    border-color: var(--highlight);
     box-shadow: 5px; 
     transition: all 200ms ease;
 }
@@ -134,9 +134,7 @@ h1, h2, h3, p {
 }
 
 .project:hover {
-    transform: scale(1.05);
-    border-color: black;
-    border-width: 0.1rem;
+    outline-offset: 0.25rem;
 }
 
 .icon-btn {
@@ -570,6 +568,11 @@ main {
 @media only screen and (max-width: 680px) {
     .skillTabs {
         min-height: 18em;
+    }
+
+    .about-me {
+        outline: none;
+        border-top: 0.25rem solid var(--highlight);
     }
 }
 
